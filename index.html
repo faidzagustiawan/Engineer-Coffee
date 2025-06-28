@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineer Coffee - Sticky Hand Animation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="animation.css">
+  <script src="main.js"></script>
+</head>
+
+<body class="bg-black text-amber-100">
+
+  <header id="main-header"
+    class="fixed w-full top-0 z-50 transition-all duration-300 bg-amber-950/80 backdrop-blur-sm border-b border-amber-800/50">
+
+    <div class="absolute inset-0 pointer-events-none opacity-10">
+
+      <div class="absolute top-2 right-10 animate-spin-slow">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400">
+
+          <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+
+          <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+
+          <path d="M12 2v2" />
+
+          <path d="M12 22v-2" />
+
+          <path d="m17 20.66-1-1.73" />
+
+          <path d="M11 10.27 7 3.34" />
+
+          <path d="m20.66 17-1.73-1" />
+
+          <path d="m3.34 7 1.73 1" />
+
+          <path d="M14 12h8" />
+
+          <path d="M2 12h2" />
+
+          <path d="m20.66 7-1.73 1" />
+
+          <path d="m3.34 17 1.73-1" />
+
+          <path d="m17 3.34-1 1.73" />
+
+          <path d="m11 13.73-4 6.93" />
+
+        </svg>
+
+      </div>
+
+      <div class="absolute top-3 left-20 animate-spin-slower">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-400">
+
+          <path
+            d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5Z" />
+
+        </svg>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="container mx-auto px-4 py-4 relative z-10">
+
+      <div class="flex items-center justify-between">
+
+        <a href="index.html"
+          class="flex items-center space-x-3 group cursor-pointer transition-transform duration-300 hover:scale-105">
+
+          <img src="src/Logo Engineer Coffee_Putih.png" class="w-auto h-20" alt="Engineer Coffee White Logo">
+
+        </a>
+
+
+
+        <nav class="hidden md:flex items-center space-x-8">
+
+          <a href="index.html"
+            class="group flex items-center space-x-2 text-amber-300 transition-all duration-300 font-medium transform hover:-translate-y-0.5 hover:scale-105">
+
+            <div class="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+
+                <polyline points="9,22 9,12 15,12 15,22" />
+
+              </svg>
+
+            </div>
+
+            <span>Home</span>
+
+          </a>
+
+          <a href="about.html"
+            class="group flex items-center space-x-2 text-amber-100 hover:text-amber-300 transition-all duration-300 font-medium transform hover:-translate-y-0.5 hover:scale-105">
+
+            <div class="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+
+              </svg>
+
+            </div>
+
+            <span>The Blueprint</span>
+
+          </a>
+
+          <a href="menu.html"
+            class="group flex items-center space-x-2 text-amber-100 hover:text-amber-300 transition-all duration-300 font-medium transform hover:-translate-y-0.5 hover:scale-105">
+
+            <div class="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+
+                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+
+                <line x1="6" x2="6" y1="2" y2="4" />
+
+                <line x1="10" x2="10" y1="2" y2="4" />
+
+                <line x1="14" x2="14" y1="2" y2="4" />
+
+              </svg>
+
+            </div>
+
+            <span>Parts List</span>
+
+          </a>
+
+        </nav>
+
+
+
+        <button id="menu-toggle-btn"
+          class="md:hidden p-3 hover:bg-amber-800/50 rounded-2xl transition-all duration-300 relative border border-amber-600/30 transform hover:scale-110 active:scale-95">
+
+          <div id="menu-icon" class="transition-all duration-200">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-amber-100">
+
+              <line x1="4" x2="20" y1="12" y2="12" />
+
+              <line x1="4" x2="20" y1="6" y2="6" />
+
+              <line x1="4" x2="20" y1="18" y2="18" />
+
+            </svg>
+
+          </div>
+
+          <div id="close-icon" class="hidden transition-all duration-200">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-amber-100">
+
+              <line x1="18" x2="6" y1="6" y2="18" />
+
+              <line x1="6" x2="18" y1="6" y2="18" />
+
+            </svg>
+
+          </div>
+
+        </button>
+
+      </div>
+
+
+
+      <div id="mobile-menu"
+        class="md:hidden mt-4 pb-4 border-t border-amber-700/50 pt-4 transition-all duration-300 max-h-0 opacity-0 overflow-hidden">
+
+        <nav class="flex flex-col space-y-4">
+
+          <a href="index.html"
+            class="mobile-menu-item group flex items-center space-x-3 text-amber-300 transition-all duration-300 p-3 rounded-2xl bg-amber-800/30 border border-amber-400/50 transform hover:translate-x-1 hover:scale-102">
+
+            <div class="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+
+                <polyline points="9,22 9,12 15,12 15,22" />
+
+              </svg>
+
+            </div>
+
+            <span class="font-medium">Home</span>
+
+          </a>
+
+          <a href="about.html"
+            class="mobile-menu-item group flex items-center space-x-3 text-amber-100 hover:text-amber-300 transition-all duration-300 p-3 rounded-2xl hover:bg-amber-800/30 border border-amber-700/30 transform hover:translate-x-1 hover:scale-102">
+
+            <div class="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+
+              </svg>
+
+            </div>
+
+            <span class="font-medium">The Blueprint</span>
+
+          </a>
+
+          <a href="menu.html"
+            class="mobile-menu-item group flex items-center space-x-3 text-amber-100 hover:text-amber-300 transition-all duration-300 p-3 rounded-2xl hover:bg-amber-800/30 border border-amber-700/30 transform hover:translate-x-1 hover:scale-102">
+
+            <div class="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+
+                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+
+                <line x1="6" x2="6" y1="2" y2="4" />
+
+                <line x1="10" x2="10" y1="2" y2="4" />
+
+                <line x1="14" x2="14" y1="2" y2="4" />
+
+              </svg>
+
+            </div>
+
+            <span class="font-medium">Parts List</span>
+
+          </a>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <section class="relative h-screen overflow-hidden bg-black text-white font-sans">
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration"></div>
+
+    <div id="zoom-bg" class="fixed top-0 h-screen w-full bg-center bg-cover bg-no-repeat z-0"
+      style=" transform: scale(1);">
+      <video id="hero-video" autoplay loop muted playsinline class="fixed top-0 left-0 w-full h-full object-cover z-0">
+        <source src="src/video-bg.webm" type="video/mp4" />
+      </video>
+    </div>
+
+    <div
+      class="absolute inset-0 z-10 bg-black/40 backdrop-blur-sm flex flex-col justify-center items-center text-center px-6">
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight revealable"
+        style="transition-delay: 0.2s;">
+        <span
+          class="block bg-gradient-to-r from-amber-200 via-orange-200 to-amber-100 bg-clip-text text-transparent drop-shadow-lg">ENGINEERED
+          FOR</span>
+        <span
+          class="block bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent drop-shadow-lg">PERFECT
+          BREW</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-amber-100 mb-8 max-w-2xl font-light leading-relaxed revealable"
+        style="transition-delay: 0.4s;">
+        Where mechanical precision meets barista artistry. <span class="text-amber-300 font-semibold">Every cup
+          engineered to perfection.</span>
+      </p>
+    </div>
+
+    <div class="absolute bottom-0 w-full h-40 bg-gradient-to-t from-black to-transparent z-20"></div>
+  </section>
+
+  <main class="relative z-10">
+    <section class="relative min-h-screen bg-red-950 border-t border-amber-800/50  text-white overflow-hidden">
+      <div class="absolute inset-0 opacity-10"  width='60'
+        height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg' %3E%3Cg fill='none' fill-rule='evenodd'
+        %3E%3Cg fill='%23D2691E' fill-opacity='0.15' %3E%3Cpath
+        d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'
+        >
+      </div>
+      </div>
+      <div class="relative z-10 container mx-auto px-4 ">
+        <div class="grid lg:grid-cols-2 gap-12 items-center min-h-screen pt-24 lg:pt-0">
+          <div class="max-w-2xl">
+            <div class="revealable">
+              <div
+                class="inline-flex items-center bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-3 rounded-full text-sm font-bold mb-6 uppercase tracking-wider shadow-xl border-2 border-amber-400/30">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg>
+                #nyetingsejak2020
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg>
+              </div>
+              <p class="text-xl md:text-2xl text-amber-100 mb-8 max-w-xl font-light leading-relaxed revealable">
+                Starting as a campus prototype in 2020, we’ve evolved from a garage project into a coffee shop with two
+                locations. Every step is a reflection of our ongoing dedication to the craft of coffee engineering.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-6 mb-12 revealable">
+              <a href="about.html"
+                class="group border-2 border-amber-400 text-amber-100 px-10 py-4 rounded-full font-bold text-lg backdrop-blur-sm bg-black/20 hover:bg-amber-600 hover:text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 active:scale-95">
+                <span class="flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                    <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+                  </svg>
+                  Full Story
+                </span>
+              </a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div
+                class="group text-center backdrop-blur-sm bg-black/20 p-4 rounded-2xl border border-amber-400/20 hover:bg-black/30 transition-all duration-300 shadow-xl revealable transform hover:-translate-y-1.5 hover:scale-102">
+                <div
+                  class="bg-gradient-to-br from-amber-500 to-orange-500 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="text-white">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                    <line x1="6" x2="6" y1="2" y2="4" />
+                    <line x1="10" x2="10" y1="2" y2="4" />
+                    <line x1="14" x2="14" y1="2" y2="4" />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2 text-amber-100">Precision Coffee</h3>
+                <p class="text-amber-200/80 text-sm">Every parameter perfected</p>
+              </div>
+              <div
+                class="group text-center backdrop-blur-sm bg-black/20 p-4 rounded-2xl border border-amber-400/20 hover:bg-black/30 transition-all duration-300 shadow-xl revealable transform hover:-translate-y-1.5 hover:scale-102">
+                <div
+                  class="bg-gradient-to-br from-orange-500 to-red-500 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="text-white">
+                    <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2 text-amber-100">Workshop Vibes</h3>
+                <p class="text-amber-200/80 text-sm">Industrial atmosphere</p>
+              </div>
+              <div
+                class="group text-center backdrop-blur-sm bg-black/20 p-4 rounded-2xl border border-amber-400/20 hover:bg-black/30 transition-all duration-300 shadow-xl revealable transform hover:-translate-y-1.5 hover:scale-102">
+                <div
+                  class="bg-gradient-to-br from-red-500 to-pink-500 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="text-white">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2 text-amber-100">Community Hub</h3>
+                <p class="text-amber-200/80 text-sm">Peoples unite here</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative revealable-x-right">
+            <div
+              class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-amber-400/30 transition-transform duration-300 hover:scale-102 hover:-translate-y-1">
+              <img src="src/community.png" alt="Engineer Coffee Workshop Interior" class="w-full h-96 object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 text-white">
+                <h3 class="text-2xl font-bold mb-2">Our Workshop</h3>
+                <p class="text-amber-200">Industrial meets comfort</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mt-6">
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-xl border-2 border-amber-400/20 revealable transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
+                <img src="src/brewing.png" alt="Precision Coffee Brewing" class="w-full h-32 object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div class="absolute bottom-2 left-2 text-white">
+                  <p class="text-sm font-semibold">Precision Brewing</p>
+                </div>
+              </div>
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-xl border-2 border-amber-400/20 revealable transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
+                <img src="src/latte2.png" alt="Artisan Latte Art" class="w-full h-32 object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div class="absolute bottom-2 left-2 text-white">
+                  <p class="text-sm font-semibold">Artisan Latte</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="philosophy"
+      class="relative py-20 bg-orange-950 border-t border-amber-800/50  text-amber-100 overflow-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 revealable">
+          <h2
+            class="text-3xl md:text-4xl font-black bg-gradient-to-r from-amber-200 to-orange-300 bg-clip-text text-transparent uppercase drop-shadow-md">
+            Our Formula is Quality</h2>
+          <p class="mt-3 text-lg text-amber-200/80 max-w-2xl mx-auto">Every element is measured for a perfect result,
+            from bean to cup.</p>
+          <div class="mt-4 w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full shadow-lg"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div
+            class="group bg-black/30 backdrop-blur-sm p-8 rounded-2xl border border-amber-800/50 hover:bg-black/50 transition-all duration-300 shadow-xl revealable transform hover:-translate-y-2">
+            <div
+              class="bg-gradient-to-br from-amber-500 to-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="text-white">
+                <path d="M10.3 8.7a2.7 2.7 0 1 1-3.6-3.6 2.7 2.7 0 0 1 3.6 3.6z" />
+                <path d="M14 6.8a2.7 2.7 0 1 1-3.6-3.6 2.7 2.7 0 0 1 3.6 3.6z" />
+                <path d="M17.6 12.2a2.7 2.7 0 1 1-3.5-3.5 2.7 2.7 0 0 1 3.5 3.5z" />
+                <path d="M19.3 17.8a2.7 2.7 0 1 1-3.5-3.5 2.7 2.7 0 0 1 3.5 3.5z" />
+                <path d="m19 19-1.5-1.5" />
+                <path d="M15.4 6.2a2.7 2.7 0 1 0-3.6 3.6 2.7 2.7 0 0 0 3.6-3.6z" />
+                <path d="M4.6 17.8a2.7 2.7 0 1 0 3.5-3.5 2.7 2.7 0 0 0-3.5 3.5z" />
+                <path d="M8.3 8.3 7 7" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-amber-100 uppercase mb-2">Variable: Coffee Beans</h3>
+            <p class="text-amber-200/80">We research hundreds of samples from across Indonesia to discover the best
+              flavor variables.</p>
+          </div>
+          <div
+            class="group bg-black/30 backdrop-blur-sm p-8 rounded-2xl border border-amber-800/50 hover:bg-black/50 transition-all duration-300 shadow-xl revealable transform hover:-translate-y-2">
+            <div
+              class="bg-gradient-to-br from-orange-500 to-red-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="text-white">
+                <path d="m12 14 4 4" />
+                <path d="M10.03 16.03 5 21" />
+                <path
+                  d="M13.5 7.5c-2.5-2.5-6-2.5-8.5 0s-2.5 6 0 8.5L12 19l8.5-8.5c2.5-2.5 2.5-6 0-8.5s-6-2.5-8.5 0L12 2l-1.5 1.5" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-amber-100 uppercase mb-2">Process: Calibration</h3>
+            <p class="text-amber-200/80">Every gram, temperature, and time is measured to produce a consistent
+              and flawless output.</p>
+          </div>
+          <div
+            class="group bg-black/30 backdrop-blur-sm p-8 rounded-2xl border border-amber-800/50 hover:bg-black/50 transition-all duration-300 shadow-xl revealable transform hover:-translate-y-2">
+            <div
+              class="bg-gradient-to-br from-red-500 to-pink-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="text-white">
+                <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                <path d="M6 2v6" />
+                <path d="M10 2v6" />
+                <path d="M14 2v6" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-amber-100 uppercase mb-2">Output: Final Product</h3>
+            <p class="text-amber-200/80">Each cup is the final product of a meticulous and dedicated
+              flavor engineering process.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-red-950 border-t border-amber-800/50 text-amber-100">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 revealable">
+          <h2
+            class="text-3xl md:text-4xl font-black bg-gradient-to-r from-amber-200 to-orange-300 bg-clip-text text-transparent uppercase drop-shadow-md">
+            Featured Specifications</h2>
+          <p class="mt-3 text-lg text-amber-200/80 max-w-2xl mx-auto">Taste some of the most sought-after formulas,
+            crafted with precision by our flavor engineers.</p>
+          <div class="mt-4 w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full shadow-lg"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div
+            class="group bg-black/40 backdrop-blur-sm rounded-2xl border border-amber-700/50 shadow-xl overflow-hidden transition-all duration-300 hover:border-amber-500 hover:scale-[1.02] hover:-translate-y-1 revealable">
+            <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Caffe Latte"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-amber-300">Caffe Latte</h3>
+              <p class="text-amber-200/80 mt-2 h-20">A balanced shot of espresso combined with soft,
+                velvety steamed milk.</p>
+              <div class="mt-4 pt-4 border-t border-amber-800/50 text-right">
+                <span class="text-2xl font-semibold text-amber-300">25K</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="group bg-black/40 backdrop-blur-sm rounded-2xl border border-amber-700/50 shadow-xl overflow-hidden transition-all duration-300 hover:border-amber-500 hover:scale-[1.02] hover:-translate-y-1 revealable">
+            <img src="src/v60.png" alt="V60 Pour Over Coffee"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-amber-300">V60 (Local Beans)</h3>
+              <p class="text-amber-200/80 mt-2 h-20">A manual extraction that highlights the unique character of
+                selected
+                Indonesian beans.</p>
+              <div class="mt-4 pt-4 border-t border-amber-800/50 text-right">
+                <span class="text-2xl font-semibold text-amber-300">28K</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="group bg-black/40 backdrop-blur-sm rounded-2xl border border-amber-700/50 shadow-xl overflow-hidden transition-all duration-300 hover:border-amber-500 hover:scale-[1.02] hover:-translate-y-1 revealable">
+            <img src="src/coklat.png" alt="Signature Hot Chocolate"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-amber-300">Signature Chocolate</h3>
+              <p class="text-amber-200/80 mt-2 h-20">Rich premium chocolate, crafted with our workshop's secret
+                formula.</p>
+              <div class="mt-4 pt-4 border-t border-amber-800/50 text-right">
+                <span class="text-2xl font-semibold text-amber-300">25K</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-16 revealable">
+          <a href="menu.html"
+            class="group inline-flex items-center justify-center border-2 border-amber-400 text-amber-100 px-10 py-4 rounded-full font-bold text-lg backdrop-blur-sm bg-black/20 hover:bg-amber-600 hover:text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 active:scale-95 shadow-lg">
+            <span class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="mr-3 transition-transform duration-300 group-hover:rotate-6">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+              </svg>
+              Explore All Components
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="headquarters" class="py-20 bg-orange-950 border-t border-amber-800/50  text-amber-100">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 revealable">
+          <h2
+            class="text-3xl md:text-4xl font-black bg-gradient-to-r from-amber-200 to-orange-300 bg-clip-text text-transparent uppercase drop-shadow-md">
+            Our Headquarters & Garage</h2>
+          <p class="mt-3 text-lg text-amber-200/80 max-w-2xl mx-auto">Find us at two strategic locations, ready to
+            serve you the best-engineered coffee.</p>
+          <div class="mt-4 w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full shadow-lg"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+          <div
+            class="group bg-black/40 backdrop-blur-sm rounded-2xl border border-amber-700/50 shadow-xl overflow-hidden transition-all duration-300 hover:border-amber-500 hover:scale-[1.02] hover:-translate-y-1 revealable">
+            <img src="src/pesantrenan.jpg" alt="Engineer Coffee Bintaro"
+              class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-amber-300 uppercase mb-2">FIRST GARAGE</h3>
+              <p class="text-amber-200/90 leading-relaxed">
+                Jl. Trs Pesantren, Sukamiskin<br>
+                Kec. Arcamanik, Kota Bandung<br>
+                Jawa Barat 40293
+              </p>
+              <a href="https://maps.app.goo.gl/AGBFS3T9N9j4NeWt5"
+                class="inline-block mt-4 text-orange-400 font-semibold hover:text-orange-300 transition-colors">View on
+                Map →</a>
+            </div>
+          </div>
+
+          <div
+            class="group bg-black/40 backdrop-blur-sm rounded-2xl border border-amber-700/50 shadow-xl overflow-hidden transition-all duration-300 hover:border-amber-500 hover:scale-[1.02] hover:-translate-y-1 revealable">
+            <img src="src/karawitan.png" alt="Engineer Coffee Kuningan"
+              class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-amber-300 uppercase mb-2">KUNINGAN GARAGE</h3>
+              <p class="text-amber-200/90 leading-relaxed">
+                Jl. Karawitan No.36a, Turangga<br>
+                Kec. Lengkong, Kota Bandung<br>
+                Jawa Barat 40264
+              </p>
+              <a href="https://maps.app.goo.gl/vgaWLBSQVBJm1MKs8"
+                class="inline-block mt-4 text-orange-400 font-semibold hover:text-orange-300 transition-colors">View on
+                Map →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="quote"
+      class="relative py-20 lg:py-32 bg-red-950 border-t border-amber-800/50  text-amber-100 overflow-hidden">
+      <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+        <svg class="w-2/3 h-2/3 lg:w-1/2 lg:h-1/2 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          fill="currentColor">
+          <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 4 8 7 8Z" />
+          <path d="M17 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 4 8 7 8Z" />
+        </svg>
+      </div>
+      <div class="container mx-auto px-6 text-center relative z-10 revealable">
+        <p
+          class="text-3xl lg:text-5xl font-light italic text-amber-200/90 max-w-4xl mx-auto leading-relaxed lg:leading-loose">
+          “Di persimpangan antara seni dan mesin, secangkir kopi yang sempurna bukanlah kebetulan—ia adalah hasil
+          perhitungan.”
+        </p>
+        <cite class="block text-amber-400 mt-8 text-lg font-semibold tracking-widest uppercase">
+          — The Head Engineer
+        </cite>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="bg-amber-950 text-white py-12 border-t border-amber-800/50 relative overflow-hidden">
+    <img src="src/LOGO ITS DAY PNG.png" class="absolute w-auto h-[100px] bottom-0" alt="ITS DAY Logo">
+    <div class="absolute inset-0 pointer-events-none opacity-10">
+      <div class="absolute top-10 left-10 animate-spin-slow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400">
+          <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+          <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+          <path d="M12 2v2" />
+          <path d="M12 22v-2" />
+          <path d="m17 20.66-1-1.73" />
+          <path d="M11 10.27 7 3.34" />
+          <path d="m20.66 17-1.73-1" />
+          <path d="m3.34 7 1.73 1" />
+          <path d="M14 12h8" />
+          <path d="M2 12h2" />
+          <path d="m20.66 7-1.73 1" />
+          <path d="m3.34 17 1.73-1" />
+          <path d="m17 3.34-1 1.73" />
+          <path d="m11 13.73-4 6.93" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div class="lg:col-span-2 revealable">
+            <a href="#"
+              class="flex items-center space-x-3 mb-6 group transition-transform duration-300 hover:scale-105">
+              <div
+                class="bg-gradient-to-br from-amber-500 to-orange-500 p-3 rounded-2xl shadow-lg border border-amber-400/30 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+                <img src="src/Logo Engineer Coffee_Putih.png" class="w-auto h-10" alt="Engineer Coffee White Logo">
+              </div>
+              <div>
+                <h3 class="text-2xl font-black group-hover:text-amber-300 transition-colors duration-300">
+                  ENGINEER COFFEE
+                </h3>
+                <p class="text-sm text-amber-300 font-semibold">Coffee Shop</p>
+              </div>
+            </a>
+            <p class="text-amber-200 mb-6 max-w-md leading-relaxed">
+              A place where engineering precision meets coffee passion.
+              Every cup is crafted to the highest technical standards to provide
+              the perfect brewing experience.
+            </p>
+            <div class="flex space-x-4">
+              <a href="https://www.instagram.com/engineer_coffee/" target="_blank" rel="noopener noreferrer"
+                class="bg-gradient-to-br from-pink-600 to-purple-600 p-3 rounded-2xl shadow-lg text-white border border-white/20 transform transition-transform duration-300 hover:-translate-y-1 hover:scale-110 hover:rotate-6 active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer"
+                class="bg-gradient-to-br from-green-600 to-emerald-600 p-3 rounded-2xl shadow-lg text-white border border-white/20 transform transition-transform duration-300 hover:-translate-y-1 hover:scale-110 hover:rotate-6 active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </a>
+              <a href="mailto:hello@engineercoffee.com"
+                class="bg-gradient-to-br from-blue-600 to-cyan-600 p-3 rounded-2xl shadow-lg text-white border border-white/20 transform transition-transform duration-300 hover:-translate-y-1 hover:scale-110 hover:rotate-6 active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="revealable">
+            <h4
+              class="text-xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
+              Quick Navigation
+            </h4>
+            <ul class="space-y-3">
+              <li><a href="index.html"
+                  class="text-amber-200 hover:text-amber-300 transition-all duration-300 inline-block transform hover:translate-x-1.5 hover:scale-105">Home</a>
+              </li>
+              <li><a href="about.html"
+                  class="text-amber-200 hover:text-amber-300 transition-all duration-300 inline-block transform hover:translate-x-1.5 hover:scale-105">The
+                  Blueprint</a></li>
+              <li><a href="menu.html"
+                  class="text-amber-200 hover:text-amber-300 transition-all duration-300 inline-block transform hover:translate-x-1.5 hover:scale-105">Parts
+                  List</a></li>
+            </ul>
+          </div>
+
+          <div class="revealable">
+            <h4
+              class="text-xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
+              Location & Info
+            </h4>
+            <div class="space-y-6 text-amber-200 text-sm">
+              <div>
+                <div class="flex items-start space-x-2 transition-transform duration-300 hover:translate-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="text-amber-400 mt-0.5 flex-shrink-0">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <div>
+                    <p>Jl. Trs Pesantren, Sukamiskin</p>
+                    <p>Kec. Arcamanik, Kota Bandung</p>
+                    <p>Jawa Barat 40293</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-start space-x-2 transition-transform duration-300 hover:translate-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="text-amber-400 mt-0.5 flex-shrink-0">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <div>
+                    <p>Jl. Karawitan No.36a, Turangga</p>
+                    <p>Kec. Lengkong, Kota Bandung</p>
+                    <p>Jawa Barat 40264</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p class="font-semibold text-amber-100 mb-2">Operating Hours (All Locations):</p>
+                <div class="space-y-1 transition-transform duration-300 hover:translate-x-1">
+                  <p>Every Day: 08:00 - 22:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-amber-700/50 pt-8 flex flex-col md:flex-row justify-between items-center revealable">
+          <div class="flex items-center space-x-2 mb-4 md:mb-0 group transition-transform duration-300 hover:scale-105">
+            <div class="animate-spin-slower">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="text-amber-400">
+                <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                <line x1="6" x2="6" y1="2" y2="4" />
+                <line x1="10" x2="10" y1="2" y2="4" />
+                <line x1="14" x2="14" y1="2" y2="4" />
+              </svg>
+            </div>
+            <p class="text-amber-200 text-sm">
+              © 2025 Engineer Coffee. Engineered for perfection.
+            </p>
+          </div>
+          <div class="flex items-center space-x-6 text-sm">
+            <span class="text-amber-300 flex items-center space-x-1 animate-pulse">
+              <span>Built with precision</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="text-amber-400">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
+
+
+

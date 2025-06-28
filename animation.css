@@ -1,0 +1,125 @@
+/* ====== ANIMASI DASAR & DEKORASI ====== */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes pulse-scale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Kelas utilitas untuk animasi dekoratif */
+.animate-spin-slow {
+  animation: spin 10s linear infinite;
+}
+
+.animate-spin-slower {
+  animation: spin-reverse 15s linear infinite;
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 2s ease-in-out infinite;
+}
+
+/* Dekorasi latar belakang (gelembung) */
+.bg-decoration {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.bg-decoration:nth-child(1) {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.bg-decoration:nth-child(2) {
+  top: 25%;
+  right: 15%;
+  animation-delay: 3s;
+  width: 60px;
+  height: 60px;
+}
+.bg-decoration:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 6s;
+  width: 100px;
+  height: 100px;
+}
+.bg-decoration:nth-child(4) {
+  bottom: 30%;
+  right: 25%;
+  animation-delay: 2s;
+  width: 70px;
+  height: 70px;
+}
+
+
+/* ====== ANIMASI SAAT SCROLL (REVEAL) ====== */
+
+/* State awal elemen sebelum terlihat */
+.revealable {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.revealable-x-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.revealable-x-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* State akhir elemen setelah terlihat (ditambahkan oleh JavaScript) */
+.revealable.is-visible,
+.revealable-x-left.is-visible,
+.revealable-x-right.is-visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+
+/* ====== TRANSISI MENU MOBILE ====== */
+
+#mobile-menu {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+#mobile-menu.menu-open {
+  max-height: 500px; /* Cukup besar untuk menampung semua item menu */
+  opacity: 1;
+}
