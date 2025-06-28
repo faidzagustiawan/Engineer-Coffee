@@ -8,29 +8,12 @@ Landing page sederhana untuk Engineer Coffee, dibangun menggunakan **HTML**, **T
 - ✅ Tailwind CSS
 - ✅ JavaScript (Vanilla)
 
-## 📁 Struktur Proyek
-
-engineer-coffee-landing/
-├── index.html
-├── /assets
-│ ├── /images
-│ └── /icons
-├── /css
-│ └── styles.css (jika ada tambahan custom)
-├── /js
-│ └── main.js
-└── README.md
-
-markdown
-Copy
-Edit
 
 ## 🎯 Fitur Utama
 
 - ✅ Desain responsif (mobile-first)
 - ✅ Navigasi smooth-scroll
 - ✅ Hero section dengan CTA
-- ✅ Galeri atau showcase produk
 - ✅ Informasi lokasi & kontak
 - ✅ Footer dengan sosial media
 
@@ -43,12 +26,7 @@ git clone https://github.com/username/engineer-coffee-landing.git
 cd engineer-coffee-landing
 Kemudian buka langsung di browser:
 
-diff
-Copy
-Edit
-index.html
-Atau gunakan Live Server (VS Code) untuk pengembangan lokal.
-
+```
 📝 Catatan
 Tailwind CSS di-load menggunakan CDN.
 
@@ -59,4 +37,4 @@ Kompatibel di berbagai browser modern.
 📌 Lisensi
 Proyek ini dilisensikan di bawah MIT License.
 
-Made with ☕ by [YourName]
+Made with ☕ by [FAIDZ,FIKRI,NABIL]
